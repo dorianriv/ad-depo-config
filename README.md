@@ -54,7 +54,7 @@ By the end of this phase, we’ll have a working domain and a management-ready A
 
 - In the Server Manager dashboard, click Add roles and features, and continue the setup
 
-![screenshot 1](https://github.com/user-attachments/assets/684fe051-e393-478c-9660-f3e7b0b17170)
+![screenshot 1](https://github.com/user-attachments/assets/c9d73107-6bf5-4cea-9917-a3cdb4e7be0a)
 
 - Select Active Directory Domain Services and finish the installation 
 
@@ -63,11 +63,11 @@ By the end of this phase, we’ll have a working domain and a management-ready A
 - Once the installation is done, notice the flag on the top right of the Server Manager
 - Click on the flag and promote DC-1 to Domain Controller
 
-![screenshot 2](https://github.com/user-attachments/assets/3adb15a5-3c33-499a-8cad-0189a917509b)
+![screenshot 2](https://github.com/user-attachments/assets/e961eec5-c5ec-45ad-8e1e-87a0f256098a)
 
 - We will now add a new Forest and set the Root domain name to "mydomain.com"
 
-![screenshot 3](https://github.com/user-attachments/assets/e314682b-fa8a-4dce-8cd5-aef2ac665ab8)
+![screenshot 3](https://github.com/user-attachments/assets/d913a844-abbd-4f59-ac5d-c891db61b3af)
 
 - Finish the setup and restart DC-1
 - Log back in with "your username"@mydomain.com
@@ -77,23 +77,23 @@ By the end of this phase, we’ll have a working domain and a management-ready A
 - Once DC-1 has rebooted, click on Tools and select Active Directory Users and Computers
 - Right click on mydomain.com and select New and click on Organizational Unit
 
-![screenshot 4](https://github.com/user-attachments/assets/e014fa30-747c-454e-ba40-71be6f1e0b2d)
+![screenshot 4](https://github.com/user-attachments/assets/925a6fa0-03c3-41e1-b707-9bff845242c3)
 
 - We will be creating an OU named_EMPLOYEES and _ADMINS
 
-![screenshot 5](https://github.com/user-attachments/assets/3c8e514b-66c7-411d-8960-c2063a83d0bb)
+![screenshot 5](https://github.com/user-attachments/assets/dce76947-c0e8-4a78-95bb-c0ff6a83a2cb)
 
 - Right click on Users and create a new user named Jane Doe with the username jane_admin
 
-![screenshot 6](https://github.com/user-attachments/assets/8c763704-53c5-468d-9eb2-96551e7594a3)
+![screenshot 6](https://github.com/user-attachments/assets/21658183-7416-4206-ab05-efa0990fcbfb)
 
 - Now we will turn Jane Doe into an admin by right-clicking her name and adding her to the "Domain Admins" Security Group
 
-![screenshot 7](https://github.com/user-attachments/assets/4b75aef0-1e81-4d9f-9e68-fa147408f631)
+![screenshot 7](https://github.com/user-attachments/assets/36cb5e70-b71a-45fa-880b-3974360ad14b)
 
 - Log out of DC-1 and log back in with Jane Doe's credentials
 
-![screenshot 8](https://github.com/user-attachments/assets/abcf7cc6-809f-422a-b193-abe047ed39aa)
+![screenshot 8](https://github.com/user-attachments/assets/bf3b2bad-d0cf-46e1-a688-ba7a48334605)
 
 <h3>&#9315; Join Client-1 to the Domain</h3>
 
@@ -101,15 +101,15 @@ By the end of this phase, we’ll have a working domain and a management-ready A
 
 - In the Azure Portal, select Client-1 -> Networking -> Network interface and click on DNS servers
 
-![screenshot 9](https://github.com/user-attachments/assets/85bcf242-3b33-4a93-b792-56bf32024ea4)
+![screenshot 9](https://github.com/user-attachments/assets/d57bf1de-c2b9-4a1e-834c-a1f24e8d2897)
 
 - Select a custom DNS server and type in the private IP address of DC-1 and restart Client-1
 
-![screenshot 10](https://github.com/user-attachments/assets/91d8bac3-c52f-4b60-abc5-74942c672ee8)
+![screenshot 10](https://github.com/user-attachments/assets/af3c5369-7c89-4842-8c18-eed9ea168dbf)
 
 - Now log back into Client-1 using your original admin credentials (labuser). Click Start and go to Settings -> Rename this PC (advanced) -> Change and add "mydomain.com" and log in with the admin credentials previously created (jane_admin)
 
-![screenshot 11](https://github.com/user-attachments/assets/4092a5ca-00e6-4ccb-9565-06618ce0e0f9)
+![screenshot 11](https://github.com/user-attachments/assets/2f9d3e20-01c4-4e4c-9dba-56edd5f58471)
 
 - Once Client-1 has been added, the VM will restart 
 
@@ -118,7 +118,7 @@ By the end of this phase, we’ll have a working domain and a management-ready A
 - Log back into Client-1 using jane_admin and open Settings -> Remote Desktop -> User Accounts and click “Select users that can remotely access this PC”
 - Add Domain Users
 
-![screenshot 12](https://github.com/user-attachments/assets/4e557f2b-be64-45d1-862b-0d0a21c0625f)
+![screenshot 12](https://github.com/user-attachments/assets/612b0026-a3c9-478c-b3ee-d2191f7beb7f)
 
 - This will allow normal users to log in to Client-1
 
